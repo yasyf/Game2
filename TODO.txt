@@ -1,0 +1,4 @@
+Use smaller sections of background, made bigger, and give the impression that you are 'zooming out' when you are really just switching backgrounds to the one with more rings showing. Then have all enemies respawn, and add 10, 20, 30, 40, 50 points, depending on the level
+DONT SCALE BAD GUYS
+w=5693
+h=3552
