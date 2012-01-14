@@ -2,3 +2,7 @@ Use smaller sections of background, made bigger, and give the impression that yo
 DONT SCALE BAD GUYS
 w=5693
 h=3552
+
+Make other enemies as slow as cirlce by using short paths, and lots (~1500) frames for the 2 keyframes, with a pasted pencil path on top
+Speed up smaller enemies by calculating how big they are (how much above 100 for scalefactor), and then having them skip every 1,2,3,etc frames to speed up
+Change goodguy animation so there is one for each enemy, fix up animations
