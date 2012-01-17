@@ -6,3 +6,7 @@ h=3552
 Make other enemies as slow as cirlce by using short paths, and lots (~1500) frames for the 2 keyframes, with a pasted pencil path on top
 Speed up smaller enemies by calculating how big they are (how much above 100 for scalefactor), and then having them skip every 1,2,3,etc frames to speed up
 Change goodguy animation so there is one for each enemy, fix up animations
+
+NEED TO FIX SIDE BLOCKS
+Check scaling more than once
+Work on speed change depending on size
