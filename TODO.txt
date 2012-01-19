@@ -10,3 +10,5 @@ Change goodguy animation so there is one for each enemy, fix up animations
 NEED TO FIX SIDE BLOCKS
 Check scaling more than once
 Work on speed change depending on size
+
+FIX EDGES
