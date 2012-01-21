@@ -15,6 +15,7 @@
 $score = $_POST['points'];
 $level = $_POST['level'];
 $name = $_POST['mname'];
+$userg = $_GET['user'];
 $nowdate = date("Y-m-d H:i:s");
 // Database variables
 $host = "localhost"; //database location
@@ -40,7 +41,7 @@ if(isset($score) && isset($name))
 	<center>
 <table>
   <tr>
-    <td align="center">High Scores</td>
+    <td align="center">Your High Scores</td>
   </tr>
   <tr>
     <td>
@@ -53,6 +54,32 @@ if(isset($score) && isset($name))
       </tr>
 <?php
 mysql_connect($host, $user, $pass);
+$sql3 = "SELECT * FROM `highscores` WHERE 'name' = '".$userg."' ORDER BY score DESC";
+echo $userg;
+$result = mysql_query($sql3);	
+while($data = mysql_fetch_row($result)){
+  echo("<tr><td>$data[1]</td><td>$data[2]</td><td>$data[3]</td><td>$data[4]</td></tr>");
+}
+?>
+    </table>
+  </td>
+</tr>
+</table>
+
+<table>
+  <tr>
+    <td align="center">Global High Scores</td>
+  </tr>
+  <tr>
+    <td>
+      <table border="1">
+      <tr>
+        <td>SCORE</td>
+        <td>NAME</td>
+<td>LEVEL</td>
+<td>DATE</td>
+      </tr>
+<?php
 $sql2 = "SELECT * FROM `highscores` ORDER BY score DESC";
 $result = mysql_query($sql2);	
 while($data = mysql_fetch_row($result)){
