@@ -54,7 +54,7 @@ if(isset($score) && isset($name))
       </tr>
 <?php
 mysql_connect($host, $user, $pass);
-$sql3 = "SELECT * FROM `highscores` WHERE 'name' = '".$userg."' ORDER BY score DESC";
+$sql3 = "SELECT * FROM `highscores` WHERE name = '".$userg."' ORDER BY score DESC";
 echo $userg;
 $result = mysql_query($sql3);	
 while($data = mysql_fetch_row($result)){

@@ -16,3 +16,6 @@ FIX DYING - LIVES RUN OUT BUT YOU DON'T DIE!
 ADD LETTERS that grow and shrink on screen (flash in and out) when going to the next stage
 
 Q toggle for lock not working
+
+DONE!
+
