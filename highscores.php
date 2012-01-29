@@ -7,15 +7,32 @@
 <META HTTP-EQUIV="Expires" CONTENT="-1">
 <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
 <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<?php
+if(!isset($score))
+{
+?>
+<meta http-equiv="refresh" content="3">
+<?php
+}
+?>
 
 </head>
 <?php
 // Copyright 2011 Yasyf Mohamedali
+
 // POST variables from flash - no GET = no cheating! ;)
-$score = $_POST['points'];
-$level = $_POST['level'];
-$name = $_POST['mname'];
-$userg = $_GET['user'];
+$time = getdate();
+$str = $time['minutes'];
+$str .= "S@&#";
+$check = sha1($str);
+$stc = ($_GET['stc']);
+$score =($_GET['points']);
+$level =$_GET['level'];
+$name = $_GET['mname'];
+if(isset($_GET['user']))
+{
+$userg =$_GET['user'];
+}
 $nowdate = date("Y-m-d H:i:s");
 // Database variables
 $host = "localhost"; //database location
@@ -26,7 +43,7 @@ $db_name = "yasyfcom_highscores2"; //database name
 mysql_connect($host, $user, $pass);
 $link = mysql_connect($host, $user, $pass);
 mysql_select_db($db_name);
-if(isset($score) && isset($name))
+if(isset($score) && isset($name) && $check == $stc)
 {
 	$sql = mysql_query("INSERT INTO `highscores` (score, name, level, nowdate) VALUES (
             '".$score."' ,
@@ -55,7 +72,6 @@ if(isset($score) && isset($name))
 <?php
 mysql_connect($host, $user, $pass);
 $sql3 = "SELECT * FROM `highscores` WHERE name = '".$userg."' ORDER BY score DESC";
-echo $userg;
 $result = mysql_query($sql3);	
 while($data = mysql_fetch_row($result)){
   echo("<tr><td>$data[1]</td><td>$data[2]</td><td>$data[3]</td><td>$data[4]</td></tr>");
