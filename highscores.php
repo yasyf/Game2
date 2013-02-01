@@ -37,7 +37,7 @@ $nowdate = date("Y-m-d H:i:s");
 // Database variables
 $host = "localhost"; //database location
 $user = "yasyfcom_high2"; //database username
-$pass = "Hybrid02"; //database password
+$pass = ""; //database password
 $db_name = "yasyfcom_highscores2"; //database name
 //Database Connection
 mysql_connect($host, $user, $pass);
